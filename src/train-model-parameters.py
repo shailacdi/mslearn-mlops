@@ -111,5 +111,5 @@ if __name__ == "__main__":
     main(args)
 
     # add space in logs
-    print("*" * 60)
+    print("*" * 62)
     print("\n\n")
