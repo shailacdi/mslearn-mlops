@@ -35,7 +35,7 @@ def ensure_endpoint(ml_client: MLClient, endpoint_name: str) -> ManagedOnlineEnd
         return endpoint
     except Exception:
         unique_suffix = datetime.datetime.now().strftime("%m%d%H%M%f")
-        name = endpoint_name or f"endpoint-{unique_suffix}"
+        name = endpoint_name #or f"endpoint-{unique_suffix}"
 
         endpoint = ManagedOnlineEndpoint(
             name=name,
