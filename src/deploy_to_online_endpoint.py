@@ -13,7 +13,7 @@ def parse_args():
     parser.add_argument("--subscription-id", dest="subscription_id", required=True)
     parser.add_argument("--resource-group", dest="resource_group", required=True)
     parser.add_argument("--workspace", dest="workspace", required=True)
-    parser.add_argument("--endpoint-name", dest="endpoint_name", default="diabetes-endpoint")
+    parser.add_argument("--endpoint-name", dest="endpoint_name", default="diabetes-endpoint_x")
     parser.add_argument("--deployment-name", dest="deployment_name", default="blue")
 
     return parser.parse_args()
@@ -35,7 +35,7 @@ def ensure_endpoint(ml_client: MLClient, endpoint_name: str) -> ManagedOnlineEnd
         return endpoint
     except Exception:
         unique_suffix = datetime.datetime.now().strftime("%m%d%H%M%f")
-        name = endpoint_name or f"endpoint-{unique_suffix}"
+        name = endpoint_name or f"endpoint-{unique_suffix}-x"
 
         endpoint = ManagedOnlineEndpoint(
             name=name,
